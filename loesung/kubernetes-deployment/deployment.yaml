@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: petclinic-container
-          image: ghcr.io/bettercodepaul/petclinic:latest
+          image: ghcr.io/jny-gk/petclinic:latest
 
 ---
 apiVersion: v1
