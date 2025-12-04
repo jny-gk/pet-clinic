@@ -1,8 +1,9 @@
 name: Docker Build and Release
 on: [ push ]
 env:
-  APP_NAME: "pet-clinic-test123"
-  GITHUB_ACCESSTOKEN: ${{ secrets.GIT_AT }}
+  #### An dieser Stelle müssen eure persönlichen Umgebungsvariablen eingetragen werden
+  # Tipp: Die Token/der API-Key werden als Secrets in den Repository-Settings eingetragen und hier referenziert.
+  GITHUB_ACCESSTOKEN: ${{ secrets.GITHUB_ACCESSTOKEN }}
 jobs:
   compile:
     name: Compile
@@ -16,16 +17,7 @@ jobs:
           java-version: 11
           cache: maven
 
-      - name: Cache Maven packages
-        uses: actions/cache@v1
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-m2
-
       - name: Compile, build and push
         run: |
-          mvn package
-          docker build --tag ghcr.io/jny-gk/petclinic:latest -f Dockerfile .
-          docker login --username jny-gk --password $GITHUB_ACCESSTOKEN ghcr.io
-          docker push ghcr.io/jny-gk/petclinic:latest
+          #### AUFGABE COMPILE, DOCKER BUILD UND PUSH
+            # hier ist Platz für maven package und docker build
