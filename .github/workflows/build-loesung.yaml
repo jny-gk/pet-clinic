@@ -2,7 +2,7 @@ name: Docker Build and Release
 on: [ push ]
 env:
   APP_NAME: "pet-clinic-test123"
-  GITHUB_ACCESSTOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GITHUB_ACCESSTOKEN: ${{ secrets.GIT_AT }}
 jobs:
   compile:
     name: Compile
