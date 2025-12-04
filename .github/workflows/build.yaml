@@ -15,7 +15,6 @@ jobs:
         with:
           distribution: temurin
           java-version: 11
-          cache: maven
 
       - name: Compile, build and push
         run: |
